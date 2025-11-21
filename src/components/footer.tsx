@@ -20,9 +20,6 @@ const Footer = () => {
           </Link>
         </li>
       </ul>
-      <div className="text-sm text-gray-500">
-        A website by James Kakivelis 
-      </div>
       <div className="text-xs text-gray-400">
         © {new Date().getFullYear()} James Kakivelis. All rights reserved.
       </div>
