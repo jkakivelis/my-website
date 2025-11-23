@@ -7,11 +7,11 @@ preview: false
 
 # OR: Why I'd Love to Work for the City
 
-One of my favorite things to tell people is that I've only had one real regret in life. It was leaving New York for college. I thought it would be good to see what it was like to live in a small town, somewhere I wouldn't have to deal with the hustle and bustle of the big city.
+One of my favorite things to tell people is that I have one real regret in life. It was leaving New York for college. I thought it would be good to see what it was like to live in a small town, somewhere I wouldn't have to deal with the hustle and bustle of the big city.
 
 > So I went to school in Boston...
 
-Boston is a great city, but I always knew that I had to come back to New York.  And right now is a very exciting time to be in New York. There is an energy that has been spreading. For the first time in a long time there is almost a sense of optimism, a sense that if we work together then we can solve problems and help improve people's lives. Like many, I have found some of that comradery in the campaign and election of Zohran Mamdani, and that has inspired me to write this.
+Boston is a great city, but I always knew that I had to come back to New York.  And right now is a very exciting time to be in New York. There is an energy that has been spreading. For the first time in a long time there is a sense of optimism, a sense that if we work together then we can solve problems and help improve people's lives. Like many, I have found some of that comradery in the campaign and election of Zohran Mamdani, and that has inspired me to write this.
 
 Software development is all about working together to solve problems. The kinds of problems you face come in all shapes and sizes, because everything is in the domain of computers and nowadays computers are a part of everything. Once upon a time, you could have argued that the internet didn't feel real. We all viewed computers, and the things they showed us, as an alternate world. People called it *the net* or *cyberspace* while we *logged on*, but technology has moved past that. And with that, it is extremely important that local governments are able to adapt with the ways technology changes and, more importantly, with the ways it changes us. 
 
