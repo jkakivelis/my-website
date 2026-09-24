@@ -43,18 +43,39 @@ export type PaprikaCategory = {
 };
 
 // NOTE: /recipes is statically prerendered with ISR (see the "use cache"
-// wrapper in recipes.ts), which means these must be set as Amplify env
-// vars available to the BUILD step, not just the runtime - a build
-// without them bakes in the "recipes unavailable" fallback until the
-// first hourly background revalidation succeeds.
-async function paprikaLogin(): Promise<string> {
+// wrapper in recipes.ts), which means credentials must be available to
+// the Amplify BUILD step, not just the runtime - a build without them
+// bakes in the "recipes unavailable" fallback until the first hourly
+// background revalidation succeeds.
+//
+// Supports two ways of supplying credentials:
+//  - Plain PAPRIKA_EMAIL / PAPRIKA_PASSWORD env vars (used for local dev
+//    via .env.local).
+//  - Amplify Gen 1 "environment secrets" (SSM Parameter Store backed),
+//    which Amplify exposes as a single JSON blob in process.env.secrets
+//    rather than as individual env vars - see
+//    https://docs.aws.amazon.com/amplify/latest/userguide/environment-secrets.html
+function getPaprikaCredentials(): { email: string; password: string } {
+  if (process.env.secrets) {
+    const secrets = JSON.parse(process.env.secrets) as Record<string, string>;
+    if (secrets.PAPRIKA_EMAIL && secrets.PAPRIKA_PASSWORD) {
+      return { email: secrets.PAPRIKA_EMAIL, password: secrets.PAPRIKA_PASSWORD };
+    }
+  }
+
   const email = process.env.PAPRIKA_EMAIL;
   const password = process.env.PAPRIKA_PASSWORD;
   if (!email || !password) {
     throw new Error(
-      "PAPRIKA_EMAIL and PAPRIKA_PASSWORD must be set to fetch recipes"
+      "Paprika credentials not found: set PAPRIKA_EMAIL/PAPRIKA_PASSWORD " +
+        "(env vars or Amplify environment secrets) to fetch recipes"
     );
   }
+  return { email, password };
+}
+
+async function paprikaLogin(): Promise<string> {
+  const { email, password } = getPaprikaCredentials();
 
   const form = new FormData();
   form.set("email", email);
