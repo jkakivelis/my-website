@@ -1,6 +1,7 @@
 import Alert from "@/components/alert";
 import Container from "@/components/container";
 import { RecipeBrowser } from "@/components/recipe/recipe-browser";
+import { RecipeWipNotice } from "@/components/recipe/recipe-wip-notice";
 import { getAllCategories, getAllRecipes } from "@/lib/recipes";
 
 export default async function Recipes() {
@@ -22,6 +23,7 @@ export default async function Recipes() {
         <h1 className="text-5xl md:text-7xl font-bold tracking-tighter leading-none my-12 text-center">
           Recipes
         </h1>
+        <RecipeWipNotice />
         <RecipeBrowser recipes={recipes} categories={categories} />
       </Container>
     </main>

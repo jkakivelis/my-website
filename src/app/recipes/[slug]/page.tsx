@@ -5,6 +5,7 @@ import Alert from "@/components/alert";
 import Container from "@/components/container";
 import { RecipeHeader } from "@/components/recipe/recipe-header";
 import { RecipeBody } from "@/components/recipe/recipe-body";
+import { RecipeWipNotice } from "@/components/recipe/recipe-wip-notice";
 
 export default async function RecipePage(props: Params) {
   const params = await props.params;
@@ -26,6 +27,7 @@ export default async function RecipePage(props: Params) {
       <Alert />
       <Container>
         <article className="mb-32">
+          <RecipeWipNotice />
           <RecipeHeader
             title={recipe.title}
             photoUrl={recipe.photoUrl}
