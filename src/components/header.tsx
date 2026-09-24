@@ -13,6 +13,11 @@ const Header = () => {
           <b>ARCHIVE</b>
         </Link>
       </li>
+      <li className="bg-white px-4 py-2 rounded shadow">
+        <Link href="/recipes" className="hover:underline">
+          <b>RECIPES</b>
+        </Link>
+      </li>
     </ul>
   );
 };
